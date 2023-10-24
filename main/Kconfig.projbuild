@@ -1,0 +1,40 @@
+menu "esp32-tm1637 Example Configuration"
+
+    config TM1637_CLK_PIN
+        int "TM1637 lcd CLK pin GPIO number"
+        range 0 34
+        default 26
+        help
+            GPIO number (IOxx) for CLK pin of TM1637 display.
+    
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used.
+    
+            GPIOs 35-39 are input-only so cannot be used to drive the One Wire Bus.
+    
+            For ESP8266, GPIO 5 is a good choice.
+    
+    config TM1637_DIO_PIN
+        int "TM1637 lcd DIO pin GPIO number"
+        range 0 34
+        default 25
+        help
+            GPIO number (IOxx) for DIO pin of TM1637 display.
+    
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used.
+    
+            GPIOs 35-39 are input-only so cannot be used to drive the One Wire Bus.    
+    endmenu
+
+    menu "esp32-DHT22 Example Configuration"
+
+        config DHT22_DATA_PIN
+            int "DHT22 data pin GPIO number"
+            range 0 34
+            default 27
+            help
+                GPIO number (IOxx) for data pin of DHT22.
+        
+                Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used.
+        
+                GPIOs 35-39 are input-only so cannot be used to drive the One Wire Bus.
+endmenu
